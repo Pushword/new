@@ -15,8 +15,8 @@
         "symfony/dotenv": "^5.2",
         "symfony/framework-bundle": "^5.2",
         "symfony/yaml": "^5.2",
-        "pushword/core": "^0.0.",
-        "pushword/admin": "^0.0."
+        "pushword/core": "*",
+        "pushword/admin": "*"
     },
     "require-dev": {
         "symfony/profiler-pack": "*",
