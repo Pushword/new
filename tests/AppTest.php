@@ -5,9 +5,9 @@ namespace App\Tests;
 use PHPUnit\Framework\TestCase;
 
 /**
- * This test are planned to be executed only on Github Action
+ * This test are planned to be executed only on Github Action.
  */
-class CustomPropertiesTraitTest extends TestCase
+class AppTest extends TestCase
 {
     public function testNewInstallation(): void
     {
