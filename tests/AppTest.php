@@ -11,7 +11,7 @@ class AppTest extends TestCase
 {
     public function testNewInstallation(): void
     {
-        $this->assertFileExists(__DIR__.'/../src/DataFixtures/AppFixtures.php');
+        self::assertFileExists(__DIR__.'/../src/DataFixtures/AppFixtures.php');
         // todo
     }
 }
