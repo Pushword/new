@@ -19,6 +19,7 @@
     "symfony/yaml": "^7.0",
     "pushword/core": "*",
     "pushword/admin": "*",
+    "pushword/admin-block-editor": "*",
     "pushword/page-scanner": "*",
     "pushword/static-generator": "*",
     "pushword/template-editor": "*"
