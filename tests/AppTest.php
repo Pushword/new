@@ -42,6 +42,27 @@ final class AppTest extends TestCase
         $db->close();
     }
 
+    public function testSuperAdminCreated(): void
+    {
+        $db = new SQLite3(self::$projectDir.'/var/app.db');
+
+        $roles = $db->querySingle("SELECT roles FROM user WHERE email = 'admin@example.tld'");
+        $db->close();
+
+        self::assertIsString($roles, 'The installer should create admin@example.tld to log in with.');
+        self::assertStringContainsString('ROLE_SUPER_ADMIN', $roles);
+    }
+
+    public function testAgentsMdShipsAndClaudeMdSymlinksToIt(): void
+    {
+        self::assertFileExists(self::$projectDir.'/AGENTS.md');
+        self::assertSame('AGENTS.md', readlink(self::$projectDir.'/CLAUDE.md'));
+
+        $content = file_get_contents(self::$projectDir.'/AGENTS.md');
+        self::assertNotFalse($content);
+        self::assertStringContainsString('vendor/pushword/docs/CLAUDE.md', $content);
+    }
+
     public function testRoutesConfigured(): void
     {
         $content = file_get_contents(self::$projectDir.'/config/routes.yaml');
